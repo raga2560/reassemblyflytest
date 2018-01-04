@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Insurance list</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="outer-content insure-list">
+  <ion-list [virtualScroll]="insurances">
+    <ion-grid fixed>
+      <ion-row align-items-stretch>
+
+	            <ion-col col-12 col-md-6 align-self-stretch align-self-center *virtualItem="let insure" approxItemHeight="457px">
+        <!-- ion-col col-12 col-md-6 align-self-stretch align-self-center *virtualItem="let insure" approxItemHeight="457px" -->
+
+          <ion-card class="insure-card">
+            <ion-card-header>
+              <button ion-item detail-none (click)="goToInsureDetail(insure)">
+                <ion-thumbnail item-start> Click place
+                  <!--img [src]="insure.insureimage" alt="Property image" -->
+                </ion-thumbnail>
+                 {{insure.title}} 
+              </button>
+            </ion-card-header>
+
+            <ion-card-content class="outer-content">
+			Description:
+              <ion-list>
+			   
+			   <p> Test  </p>
+                <button ion-button (click)="goToTradePanel(insure)">
+                  <h3>Buy share</h3>
+                </button>
+				<button  ion-button (click)="goToTradePanel(insure)">
+                  <h3>Sell share</h3>
+                </button>
+                
+              </ion-list>
+            </ion-card-content>
+
+            <ion-row no-padding>
+              <ion-col col-12 col-lg-auto text-center text-lg-left>
+                <button ion-button clear small color="primary" icon-start (click)="goToPropertyTwitter(insure)">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                  Tweet
+                </button>
+              </ion-col>
+              <ion-col col-12 col-lg-auto text-center>
+                <button ion-button clear small color="primary" icon-start (click)="openPropertyShare(insure)">
+                  <ion-icon name='share-alt'></ion-icon>
+                  Share
+                </button>
+              </ion-col>
+              <ion-col col-12 col-lg-auto text-center text-lg-right>
+                <button ion-button clear small color="primary" icon-start (click)="openContact(insure)">
+                  <ion-icon name='chatboxes'></ion-icon>
+                  Contact
+                </button>
+              </ion-col>
+            </ion-row>
+
+          </ion-card>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+</ion-content>
+
+
+
+
+
+
+
+

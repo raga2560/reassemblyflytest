@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Aggrement List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <h4>Aggrement</h4>
+  <p>List of terms</p>
+
+  <accordion-list *ngFor="let item of items"
+                  [title]="item.name"
+                  textColor="#FFF"
+                  hasMargin="false"
+                  headerColor="#F53D3D">
+    <img [src]="item.imageUrl">
+    <p text-wrap>{{item.description}}</p>
+  </accordion-list>
+  
+  <button ion-button full>Agree</button>
+  
+</ion-content>

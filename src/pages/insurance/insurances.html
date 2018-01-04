@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Select Insurance </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+ <ion-slides #slider pager autoplay="2000" (ionSlideDidChange)="onSlideChanged()" dir="rtl" spaceBetween="10" slidesPerView="2">
+    <ion-slide *ngFor="let slide of slides"
+               [ngStyle]="{'background' : 'url(' + slide.imageUrl + ')'}">
+      <h2>{{slide.title}}</h2>
+    </ion-slide>
+  
+  </ion-slides>
+  
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      {{item.title}}
+    </button>
+  </ion-list>
+</ion-content>
+
