@@ -2,12 +2,12 @@ import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { IonicModule, NavController } from 'ionic-angular';
-import { MyApp } from '../../app/app.component';
+import { MyApp } from '../../../app/app.component';
 import { ProductPage } from './product';
 import { WishlistPage } from '../wishlist/wishlist';
-import { WishlistService } from '../../providers/wishlist-service';
-import { Products } from '../../providers/products';
-import { ProductsMock, NavMock, WishlistServiceMock } from '../../mocks';
+import { WishlistService } from '../../../providers/wishlist-service';
+import { Products } from '../../../providers/products';
+import { ProductsMock, NavMock, WishlistServiceMock } from '../../../mocks';
  
 let comp: ProductPage;
 let fixture: ComponentFixture<ProductPage>;

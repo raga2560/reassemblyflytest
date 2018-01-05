@@ -2,10 +2,10 @@ import { TestBed, ComponentFixture, async, inject } from '@angular/core/testing'
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { IonicModule, NavController } from 'ionic-angular';
-import { MyApp } from '../../app/app.component';
+import { MyApp } from '../../../app/app.component';
 import { WishlistPage } from './wishlist';
-import { WishlistService } from '../../providers/wishlist-service';
-import { NavMock, WishlistServiceMock } from '../../mocks';
+import { WishlistService } from '../../../providers/wishlist-service';
+import { NavMock, WishlistServiceMock } from '../../../mocks';
 
 let comp: WishlistPage;
 let fixture: ComponentFixture<WishlistPage>;
