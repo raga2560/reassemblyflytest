@@ -9,6 +9,10 @@ import { NativeGoogleMapsProvider } from '../providers/native-google-maps/native
 import { Auth } from '../providers/auth.passport';
 // import { InsurelistService } from '../providers/insurelist.service';
 
+import { WishlistService } from '../providers/wishlist-service';
+import { Products } from '../providers/products';
+
+
 // Ionic native providers
 import { CardIO } from '@ionic-native/card-io';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
@@ -44,6 +48,8 @@ export const PROVIDERS = [
   CameraProvider,
   Auth,
 //  InsurelistService,
+  Products, 
+  WishlistService,
   NativeGoogleMapsProvider,
 
   // Ionic native specific providers

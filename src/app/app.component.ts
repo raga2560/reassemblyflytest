@@ -48,6 +48,8 @@ loggedoutpages: Array<{ title: string, component: any, active: boolean, icon: st
 	  { title: 'Login', component: 'LoginSliderPage', active: false, icon: 'archive' },
 	  { title: 'Insurance', component: 'InsurancesPage', active: false, icon: 'contact' },
       { title: 'Status', component: 'StatusPage', active: false, icon: 'body' },
+	        { title: 'Product', component: 'ProductPage', active: false, icon: 'body' },
+			{ title: 'Wishlist', component: 'WishlistPage', active: false, icon: 'body' },
      
       { title: 'Logout',   component: 'HomePage', active: false, icon: 'ionic', logsOut: true },
 	  { title: '!Terms', component: 'AccordionListPage', active: false, icon: 'map' },
