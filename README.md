@@ -3,6 +3,10 @@
 
 _Currently this project is using the latest versions of all: Ionic and Angular 4_
 
+-Login works
+
+-Basic testing works with product and wishlist
+
 This repository was made in order to help people learn and speed up their development process.
 You will find many many different components, pages, pipes, services, of which can be very useful to you. Note though that these are all experimental!
 
