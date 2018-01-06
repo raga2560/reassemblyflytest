@@ -52,7 +52,7 @@ describe('Component: Root Component', () => {
     });
 
     it('displays the product page to the user', () => {
-         expect(comp['rootPage']).toBe(HomePage);
+         expect(comp['rootPage']).toBe('HomePage');
 		 //expect(fixture).toBeTruthy();
     });
  
