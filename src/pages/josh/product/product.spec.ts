@@ -3,6 +3,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { IonicModule, NavController } from 'ionic-angular';
 import { MyApp } from '../../../app/app.component';
+
+import { ProductPageModule } from './product.module';
 import { ProductPage } from './product';
 import { WishlistPage } from '../wishlist/wishlist';
 import { WishlistService } from '../../../providers/wishlist-service';
@@ -20,7 +22,8 @@ describe('Page: Product Page', () => {
 
         TestBed.configureTestingModule({
  
-            declarations: [MyApp, ProductPage],
+            declarations: [MyApp],
+			//declarations: [],
  
             providers: [
                 {
@@ -38,7 +41,8 @@ describe('Page: Product Page', () => {
             ],
  
             imports: [
-                IonicModule.forRoot(MyApp)
+                IonicModule.forRoot(MyApp),
+				ProductPageModule
             ]
  
         }).compileComponents();
