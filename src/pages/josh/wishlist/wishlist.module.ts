@@ -24,4 +24,4 @@ import { WishlistService } from '../../../providers/wishlist-service';
   ]
 })
 
-export class ProductPageModule { }
+export class WishlistPageModule { }

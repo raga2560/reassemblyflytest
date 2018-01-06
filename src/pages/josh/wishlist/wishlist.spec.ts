@@ -4,6 +4,8 @@ import { DebugElement } from '@angular/core';
 import { IonicModule, NavController } from 'ionic-angular';
 import { MyApp } from '../../../app/app.component';
 import { WishlistPage } from './wishlist';
+import { WishlistPageModule } from './wishlist.module';
+
 import { WishlistService } from '../../../providers/wishlist-service';
 import { NavMock, WishlistServiceMock } from '../../../mocks';
 
@@ -18,7 +20,7 @@ describe('Page: Wishlist Page', () => {
 
         TestBed.configureTestingModule({
  
-            declarations: [MyApp, WishlistPage],
+            declarations: [MyApp],
  
             providers: [
                 {
@@ -32,7 +34,8 @@ describe('Page: Wishlist Page', () => {
             ],
  
             imports: [
-                IonicModule.forRoot(MyApp)
+                IonicModule.forRoot(MyApp),
+				WishlistPageModule
             ]
  
         }).compileComponents();

@@ -16,14 +16,6 @@ export class ListPage {
       {
         title: 'Settings',
         page : 'SettingsListPage'
-      },
-      {
-        title: 'Sliding Item',
-        page : 'SlidingItemPage'
-      },
-      {
-        title: 'Delete Items',
-        page: 'DeleteItemsPage'
       }
     ];
   }
