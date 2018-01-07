@@ -50,7 +50,7 @@ export class HomePage {
       // },
       
       {
-        title: 'Login',
+        title: 'Login1',
         page: 'LoginSliderPage'
       },
 	  {

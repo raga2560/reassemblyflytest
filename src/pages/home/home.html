@@ -16,7 +16,7 @@
   </ion-slides>
   
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)" >
       {{item.title}}
     </button>
   </ion-list>

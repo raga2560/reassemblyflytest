@@ -15,6 +15,35 @@ describe('Example E2E Test', () => {
 		
 
   });
+  
+  it('the user can browse to login screen', () => {
+
+    // Click the 'About' tab
+    let btn = element(by.buttonText('Login1'));
+
+	
+	
+	btn.click();
+      // Wait for the page transition
+      browser.driver.sleep(5000);
+	  
+	  btn = element(by.id('fsbutton'));
+	  
+	  btn.click();
+      // Wait for the page transition
+      browser.driver.sleep(5000);
+
+
+      expect(element(by.id('signupbutton')) // Grab the label of the list item
+        .getAttribute('innerHTML')) // Get the text content
+        .toContain('SIGN UP'); // Check if it contains the text "@ionicframework"
+
+    
+	
+	
+   	
+
+  });
 
   it('the user can browse to the contact tab and view the ionic twitter handle', () => {
 
@@ -34,5 +63,45 @@ describe('Example E2E Test', () => {
     
 
   }); 
+    
+  /*
+  it('check the user can login', () => {
 
+    // Click the 'About' tab
+    let btn = element(by.buttonText('Login'));
+
+	
+	
+	btn.click();
+      // Wait for the page transition
+      browser.driver.sleep(20000);
+	  
+	  btn = element(by.id('firstsignupbutton'));
+	  
+	  btn.click();
+      // Wait for the page transition
+      browser.driver.sleep(20000);
+
+
+	  
+	let s1 = element(by.id('signupemail'));
+	s1.sendKeys("hello1");
+    let s2 = element(by.id('signupepass'));
+	s2.sendKeys("abcd");
+	let s3 = element(by.id('signupconfirmpass'));
+	s3.sendKeys("abcd");
+
+	
+	btn = element(by.buttonText('signupbutton'));
+
+	
+	
+	btn.click();
+      // Wait for the page transition
+      browser.driver.sleep(20000);
+
+   	
+
+  }); 
+*/
 });
