@@ -14,6 +14,7 @@ export class LoginSliderPage {
   public backgroundImage = 'assets/img/background/background-6.jpg';
 
   email: string;
+  email1: string;
   role: string;
   password: string;
   loading: any;

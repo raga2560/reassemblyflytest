@@ -15,7 +15,7 @@ describe('Example E2E Test', () => {
 		
 
   });
-  
+  /*
   it('the user can browse to login screen', () => {
 
     // Click the 'About' tab
@@ -63,45 +63,49 @@ describe('Example E2E Test', () => {
     
 
   }); 
-    
-  /*
+    */
+  
   it('check the user can login', () => {
 
     // Click the 'About' tab
-    let btn = element(by.buttonText('Login'));
+    let btn = element(by.buttonText('Login1'));
 
 	
 	
 	btn.click();
       // Wait for the page transition
-      browser.driver.sleep(20000);
+      browser.driver.sleep(5000);
 	  
-	  btn = element(by.id('firstsignupbutton'));
+	  btn = element(by.id('fsbutton'));
+	  
 	  
 	  btn.click();
       // Wait for the page transition
-      browser.driver.sleep(20000);
+      browser.driver.sleep(5000);
 
 
 	  
-	let s1 = element(by.id('signupemail'));
-	s1.sendKeys("hello1");
-    let s2 = element(by.id('signupepass'));
+	let s1 = element(by.css('.signup input[type="email"]'));
+	browser.sleep(500);
+	//s1.click();
+	s1.sendKeys('hello1');
+	/*
+    let s2 = element(by.model('password'));
 	s2.sendKeys("abcd");
-	let s3 = element(by.id('signupconfirmpass'));
-	s3.sendKeys("abcd");
+	let s3 = element(by.model('password'));
+	s3.sendKeys("abcd"); */
 
 	
-	btn = element(by.buttonText('signupbutton'));
+	btn = element(by.id('signupbutton'));
 
 	
 	
 	btn.click();
       // Wait for the page transition
-      browser.driver.sleep(20000);
+      browser.driver.sleep(5000);
 
    	
 
   }); 
-*/
+
 });

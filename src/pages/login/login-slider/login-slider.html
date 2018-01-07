@@ -68,17 +68,17 @@
       <div style="padding: 32px">
         <ion-item>
           <ion-label floating>E-mail</ion-label>
-          <ion-input [(ngModel)]="email"  type="email" id="signupemail"></ion-input>
+          <ion-input [(ngModel)]="email1"  type="email" id='signupemail' class="signup"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label floating>Password</ion-label>
-          <ion-input [(ngModel)]="password"  type="password" id="signuppass"></ion-input>
+          <ion-input [(ngModel)]="password"  type="password" id='signuppass'></ion-input>
         </ion-item>
         <ion-item class="margin-bottom">
           <ion-label floating>Confirm Password</ion-label>
-          <ion-input [(ngModel)]="password"  type="password" id="signupconfirmpass"></ion-input>
+          <ion-input [(ngModel)]="password"  type="password" id='signupconfirmpass'></ion-input>
         </ion-item>
-        <button ion-button block round (click)="signup()" color="light" class="login-button" id="signupbutton">SIGN UP</button>
+        <button ion-button block round (click)="signup()" color="light" class="login-button" id='signupbutton'>SIGN UP</button>
       </div>
     </ion-slide>
   </ion-slides>
