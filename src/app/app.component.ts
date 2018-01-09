@@ -50,6 +50,8 @@ loggedoutpages: Array<{ title: string, component: any, active: boolean, icon: st
       { title: 'Status', component: 'StatusPage', active: false, icon: 'body' },
 	        { title: 'Product', component: 'ProductPage', active: false, icon: 'body' },
 			{ title: 'Wishlist', component: 'WishlistPage', active: false, icon: 'body' },
+			{ title: 'fab', component: 'PageOne', active: false, icon: 'body' },
+			
      
       { title: 'Logout',   component: 'HomePage', active: false, icon: 'ionic', logsOut: true },
 	  { title: '!Terms', component: 'AccordionListPage', active: false, icon: 'map' },
