@@ -40,6 +40,31 @@ export class Auth {
   	});
 
   }
+  
+  /*
+  let details = {
+  	    email: this.email,
+  	    password: this.password,
+  	    role: this.role
+  	};
+	C:\ionic4\backup\todo-roles (1)\src\pages\signup-page\signup-page.ts
+	
+  */
+  
+  /*
+  Data got with token
+  return {
+		_id: request._id,
+		email: request.email,
+		role: request.role
+	};
+	C:\ionic4\backup\flyinsureserver\routes\moronyauth\controllers\authentication.js
+	
+	res.status(200).json({
+		token: 'JWT ' + generateToken(userInfo),
+		user: userInfo
+	});
+  */
 
   createAccount(details){
 
@@ -57,7 +82,8 @@ export class Auth {
 	        resolve(data);
 			
 			this.storage.set(this.HAS_LOGGED_IN, true);
-			// this.setUsername(username);
+			this.setUsername(details.email);
+			this.setUserInfo(data.user);
 			this.events.publish('user:signup');
 
 	      }, (err) => {
@@ -77,6 +103,24 @@ export class Auth {
     });
   };
 
+  setUserInfo(userinfo): void {
+    this.storage.set('userinfo', userinfo);
+  };
+
+  getUserInfo(): Promise<any> {
+    return this.storage.get('userinfo').then((value) => {
+      return value;
+    });
+  };
+
+  
+  /*
+   let credentials = {
+            email: this.email,
+            password: this.password
+        };
+C:\ionic4\backup\todo-roles (1)\src\pages\login-page\login-page.ts		
+  */
 
   login(credentials){
 
@@ -94,7 +138,8 @@ export class Auth {
 	        resolve(data);
 			
 			this.storage.set(this.HAS_LOGGED_IN, true);
-			// this.setUsername(username);
+			this.setUsername(credentials.email);
+			this.setUserInfo(data.user);
 			this.events.publish('user:login');
 
 	        resolve(res.json());
@@ -108,6 +153,7 @@ export class Auth {
 
   logout(){
   	this.storage.set('token', '');
+	this.storage.set('userinfo', '');
 	this.storage.remove(this.HAS_LOGGED_IN);
     this.storage.remove('username');
     this.events.publish('user:logout');

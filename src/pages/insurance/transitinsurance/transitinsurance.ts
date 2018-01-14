@@ -23,7 +23,7 @@ import { FileUploader } from 'ng2-file-upload';
 import { TradePanelPage } from '../tradepanel/tradepanel';
 import { InsurelistService } from '../../../providers/insurelist.service';
 import { Insurelist } from '../../../pages/transaction-shared/insurelist';
-
+import { Auth } from '../../../providers/auth.passport';
 
 @IonicPage()
 @Component({
@@ -45,6 +45,9 @@ export class TransitInsurancePage {
   insureentry: Insurelist;
 //native image download
   storageDirectory: string = '';
+  loggedinuser: string = '';
+  loggedinuserinfo :any;
+  
   slides = [
     {
       title: 'Dream\'s Adventure',
@@ -118,6 +121,7 @@ fileuploadFile: any;
     public insurelistservice: InsurelistService,
     private filetransfer: FileTransfer,
     private transfer: Transfer, private file: File,
+	private authService: Auth,
     public toastCtrl: ToastController
   
   ) {
@@ -125,6 +129,22 @@ fileuploadFile: any;
     for (let i = 0; i < 20; i++) {
       this.slides.push(this.slides[i % 4]);
     }
+	
+	this.authService.checkAuthentication().then((res) => {
+			
+			this.authService.getUserInfo().then((res1) => {
+			this.loggedinuserinfo = res1;
+			this.loggedinuser  = this.loggedinuserinfo.email;
+			console.log("Already authorized as:" + this.loggedinuserinfo.email);			
+			});
+		   
+		
+		}, (err) => {
+			console.log("Not already authorized");
+			
+	});
+
+	
 	
 	this.uploader.onAfterAddingFile = (file)=> { file.withCredentials = false; };
        //overide the onCompleteItem property of the uploader so we are 
@@ -138,6 +158,14 @@ fileuploadFile: any;
   
    
   }
+  
+  ionViewDidLoad() {
+
+		//Check if already authenticated
+	
+
+		
+	} 
 
   ngAfterViewInit() {
     // this.slider.freeMode = true;
@@ -218,6 +246,8 @@ fileuploadFile: any;
   //------below code for uploadinginto firebase/mongodb ----- //
   
   UpdateInsureEntry() {
+	  this.insureentry.consumername = this.loggedinuser;
+	  this.insureentry.consumerid = this.loggedinuserinfo._id;
         var passingdata = {
 		type:'simple',
 		data : this.insureentry
@@ -229,6 +259,10 @@ fileuploadFile: any;
   }
   
   createInsureEntry() {
+	
+	this.insureentry.consumername = this.loggedinuser;
+	this.insureentry.consumerid = this.loggedinuserinfo._id;
+	
 	
         var passingdata = {
 		type:'simple',
