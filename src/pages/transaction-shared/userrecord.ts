@@ -1,6 +1,7 @@
 export class UserRecord {
   $key: string;
   _id: string;
+  collection: string;
   consumerid:string;
   validatorid:string;
   invoiceid:string;
